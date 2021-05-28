@@ -1,0 +1,12 @@
+nav {
+  background-color: cadetblue;
+}
+a{
+  text-decoration: none;
+  color: black;
+  font-family: "Arial Black";
+}
+.nav-link:hover{
+  color: aquamarine;
+
+}

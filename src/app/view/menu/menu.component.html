@@ -1,0 +1,264 @@
+<nav class="navbar navbar-expand-lg" style="background-color: #00ffff;width: 100%" >
+  <a class="navbar-brand" style=font-weight:bold>sales pilot </a>
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn"><i class="fa fa-search"></i></button>
+    <button class="btn btn-link btn-outline-primary" (click)="projetCreationOpen()"><i class="fa fa-plus"></i></button>
+    <button class="btn btn-link btn-outline-primary" (click)="showNotificationDetail()"><i class="fa fa-bell"><span class="badge badge-pill badge-warning" style="float:right;margin-bottom:-15px;margin-right:-10px;font-size: 10px">2</span></i></button>
+    <button class="btn btn-link btn-outline-primary"><i class="fa fa-gears"></i></button>
+    <i class="fa fa-user-circle fa-2x"></i>
+    <span class="navbar-text">user user</span>
+
+  </form>
+</nav>
+<div class="container" style="float: left;width: max-content">
+  <div class="wrapper" style="background-color: lightblue;">
+    <div class="item" style="position: relative">
+      <span class="text">developpment d'une application web</span>
+      <button class="btn" (click)="showDiv()"><i class="fa fa-bars" ></i></button>
+
+      <div class="list-group-item"  style="align-items:center">
+        <span class="text">task 1</span>
+        <button class="btn btn-outline-primary" (click)="showDetailTask()"><i class="fa fa-bars" ></i></button>
+        <button class="btn btn-outline-primary"><i class="fa fa-trash"></i></button>
+      </div>
+      <div class="list-group-item"  style="align-items: center">
+        <span class="text">task 2</span>
+        <button class="btn btn-outline-primary"><i class="fa fa-bars"></i></button>
+        <button class="btn btn-outline-primary"><i class="fa fa-trash"></i></button>
+      </div>
+      <div class="list-group-item"><button class="btn btn-outline-primary" (click)="openCreationTask()">ajouter une tache</button></div>
+    </div>
+    <div class="item">
+      <span class="text">seo pour entreprise xxx</span>
+      <button class="btn"><i class="fa fa-bars"></i></button>
+    </div>
+  </div>
+</div>
+<div class="container" id="projet-display" style="display: none">
+  <div class="card">
+    <div class="card-header"><div class="row"><div class="col-11"><p style="font-family: 'Arial Black'">detail de projet </p></div>
+      <div class="col-1"><button class="btn" (click)="closeTab()"><i class="fa fa-close"></i></button></div></div>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-6">nom :</div>
+        <div class="col-6">projet1 </div>
+      </div>
+      <div class="row">
+        <div class="col-6">description :</div>
+        <div class="col-6">projet1 projet1 </div>
+      </div>
+      <div class="row">
+        <div class="col-6">responsable :</div>
+        <div class="col-6">responsable</div>
+      </div>
+      <div class="row">
+        <div class="col-6">date de debut :</div>
+        <div class="col-6">12-10-2012 </div>
+      </div>
+      <div class="row">
+        <div class="col-6">date de fin :</div>
+        <div class="col-6">12-12-2012 </div>
+      </div>
+      <div class="row">
+        <div class="col-6">les employes:</div>
+        <div class="col-6"><ul>
+          <li>employe 1</li>
+          <li>employe 2</li>
+          <li>employe 3</li>
+        </ul> </div>
+      </div>
+      <div class="row">
+        <div class="col-6">etat de projet</div>
+        <div class="col-6">uncomplet </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <button class="btn btn-outline-primary " (click)="projetUpdateShow()">modifier</button>
+      <button class="btn btn-outline-primary ">supprimer</button>
+    </div>
+  </div>
+</div>
+<div class="container" id="task-display" style="display: none">
+  <div class="card">
+    <div class="card-header"><div class="row"><div class="col-11"><p style="font-family: 'Arial Black'">detail de la tache </p></div>
+      <div class="col-1"><button class="btn" (click)="closeTask()"><i class="fa fa-close"></i></button></div></div>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-6">nom :</div>
+        <div class="col-6">tache1 </div>
+      </div>
+      <div class="row">
+        <div class="col-6">description :</div>
+        <div class="col-6">tache tache tache </div>
+      </div>
+      <div class="row">
+        <div class="col-6">date de debut :</div>
+        <div class="col-6">12-10-2012 </div>
+      </div>
+      <div class="row">
+        <div class="col-6">date de fin :</div>
+        <div class="col-6">12-12-2012 </div>
+      </div>
+      <div class="row">
+        <div class="col-6">les employes :</div>
+        <div class="col-6">
+          <ul>
+            <li>employe1</li>
+            <li>employe2</li>
+            <li>employe3</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">etat de la tache:</div>
+        <div class="col-6">completed</div>
+      </div>
+      <div class="row">
+        <div class="col"><button class=" btn btn-outline-primary" (click)="openUpdateTask()"> modifier la tache</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" id="notification-display" style="display: none">
+  <button class="btn btn-dark" (click)="closeNotificationDetail()" ><i class="fa fa-window-close"></i></button>
+  <div class="row">
+    <div class="col-md-1 padding-0">user user :</div>
+    <div class="col-md-4 padding-0">objet of notification cbdgxvdfhrtj </div>
+    <div class="col-md-7"></div>
+  </div>
+  <div class="row">
+    mdgnldrenglet rshnethnerinrehoitnhietjyetopyjes(opyjeropyjepye(
+  </div>
+  <div class="row">
+    <div class="col-md-1 padding-0">user user2:</div>
+    <div class="col-md-4 padding-0">objet of notification2 cbdgxvdfhrtj </div>
+    <div class="col-md-7"></div>
+  </div>
+  <div class="row">
+    info about somethingsbdfngtjjjjyjtyktktukuk
+  </div>
+</div>
+<div class="container" id="projet-creation" style="display: none">
+<div class="card" >
+  <div class="card-header col">
+    <div class="card-header"><div class="row"><div class="col-11"><p style="font-family: 'Arial Black'">ajouter un projet </p></div>
+      <div class="col-1"><button class="btn" (click)="projetCreationClose()"><i class="fa fa-close"></i></button></div></div>
+  </div>
+  <div class="card-body">
+    <div class="form-group">
+      <label>nom</label><input type="text" class="form-control" >
+      <label>description</label><input type="text" class="form-control" >
+      <label>responsable</label><input type="text" class="form-control" >
+      <label>client</label>
+      <select name="pets" id="pet-select" class="form-control bg-light p-2">
+        <option value="">--Please choose an option--</option>
+        <option value="dog">dog</option>
+        <option value="cat">Cat</option>
+        <option value="hamster">owl</option>
+      </select>
+      <label>date de debut</label><input type="date" class="form-control" >
+      <label>date de fin</label><input type="date" class="form-control" >
+    </div>
+  </div>
+  <div class="card-footer">
+    <button class="btn-block btn-outline-primary">ajouter le projet</button>
+  </div>
+</div>
+</div>
+</div>
+<div class="container" id="update-projet" style="display: none">
+  <div class="card" >
+    <div class="card-header col">
+      <div class="card-header"><div class="row"><div class="col-11"><p style="font-family: 'Arial Black'">modifier le projet </p></div>
+        <div class="col-1"><button class="btn" (click)="projetUpdateClose()"><i class="fa fa-close"></i></button></div></div>
+      </div>
+      <div class="card-body">
+        <div class="form-group">
+          <label>nom</label><input type="text" class="form-control" >
+          <label>description</label><input type="text" class="form-control" >
+          <label>responsable</label><input type="text" class="form-control" >
+          <label>client</label>
+          <select name="pets" id="client-select" class="form-control bg-light p-2">
+            <option value="">--Please choose an option--</option>
+            <option value="dog">dog</option>
+            <option value="cat">Cat</option>
+            <option value="hamster">owl</option>
+          </select>
+          <label>date de debut</label><input type="date" class="form-control" >
+          <label>date de fin</label><input type="date" class="form-control" >
+        </div>
+      </div>
+      <div class="card-footer">
+        <button class="btn-block btn-outline-primary">sauvegarder les modifications</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container" id="taskUpdate" style="display: none">
+  <div class="card">
+    <div class="card-header"><div class="row"><div class="col-11"><p style="font-family: 'Arial Black'">modifer la tache </p></div>
+      <div class="col-1"><button class="btn" (click)="closeUpdateTask()"><i class="fa fa-close"></i></button></div></div>
+    </div>
+    <div class="card-body">
+      <div class="form-group">
+        <label>nom</label><input type="text" class="form-control" >
+        <label>description</label><input type="text" class="form-control" >
+        <label>responsable</label><input type="text" class="form-control" >
+        <label>employe</label>
+        <select name="pets" id="employ-select" class="form-control bg-light p-2">
+          <option value="">--Please choose an option--</option>
+          <option value="dog">dog</option>
+          <option value="cat">Cat</option>
+          <option value="hamster">owl</option>
+        </select>
+        <label>date de debut</label><input type="date" class="form-control" >
+        <label>date de fin</label><input type="date" class="form-control" >
+        <label>etat de la tache</label>
+        <select name="pets" id="statue-select" class="form-control bg-light p-2">
+          <option value="">--Please choose an option--</option>
+          <option value="dog">complet</option>
+          <option value="cat">non-complet</option>
+        </select>
+      </div>
+    </div>
+    <div class="card-footer">
+      <button class="btn-block btn-outline-primary">sauvegarder les modifications</button>
+    </div>
+  </div>
+</div>
+<div class="container" id="task-creation" style="display: none">
+  <div class="card">
+    <div class="card-header"><div class="row"><div class="col-11"><p style="font-family: 'Arial Black'">ajouter une tache </p></div>
+      <div class="col-1"><button class="btn" (click)="closeCreationTask()"><i class="fa fa-close"></i></button></div></div>
+    </div>
+    <div class="card-body">
+      <div class="form-group">
+        <label>nom</label><input type="text" class="form-control" >
+        <label>description</label><input type="text" class="form-control" >
+        <label>responsable</label><input type="text" class="form-control" >
+        <label>employe</label>
+        <select name="pets" id="selection-employe" class="form-control bg-light p-2">
+          <option value="">--Please choose an option--</option>
+          <option value="dog">dog</option>
+          <option value="cat">Cat</option>
+          <option value="hamster">owl</option>
+        </select>
+        <label>date de debut</label><input type="date" class="form-control" >
+        <label>date de fin</label><input type="date" class="form-control" >
+        <label>etat de la tache</label>
+        <select name="pets" id="etat-select" class="form-control bg-light p-2">
+          <option value="">--Please choose an option--</option>
+          <option value="dog">complet</option>
+          <option value="cat">non-complet</option>
+        </select>
+      </div>
+    </div>
+    <div class="card-footer">
+      <button class="btn-block btn-outline-primary">ajouteer la tache</button>
+    </div>
+  </div>
+</div>
