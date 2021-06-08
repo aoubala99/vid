@@ -3,24 +3,24 @@
     <div class="card-header"><h3>ajouter une ville</h3></div>
     <div class="card-body">
       <div class="form-group">
-        <label>nom</label><input type="text" class="form-control" [(ngModel)]="ville.nom">
-        <label>Code Postal</label><input type="number" class="form-control" [(ngModel)]="ville.codePostal">
+        <label>nom</label><input type="text" class="form-control" >
+        <label>Code Postal</label><input type="number" class="form-control" >
       </div>
       <div class="card col-md-11 ml-5">
         <div class="card-header"><h3>ajouter un candidat</h3></div>
         <div class="card-body">
           <div class="form-group">
-            <label>nom</label><input type="text" class="form-control" [(ngModel)]="candidat.nom">
-            <label>prenom</label><input type="text" class="form-control" [(ngModel)]="candidat.prenom">
-            <label>profession</label><input type="text" class="form-control" [(ngModel)]="candidat.profession">
-            <label>mail</label><input type="text" class="form-control" [(ngModel)]="candidat.mail">
-            <label>description</label><input type="text" class="form-control" [(ngModel)]="candidat.description">
-            <label>address</label><input type="text" class="form-control" [(ngModel)]="candidat.address">
+            <label>nom</label><input type="text" class="form-control" >
+            <label>prenom</label><input type="text" class="form-control" >
+            <label>profession</label><input type="text" class="form-control" >
+            <label>mail</label><input type="text" class="form-control" >
+            <label>description</label><input type="text" class="form-control" >
+            <label>address</label><input type="text" class="form-control" >
             <label>numero de telephone</label><input type="text" class="form-control"
-                                                     [(ngModel)]="candidat.numtelephone">
-            <label>cin</label><input type="text" class="form-control" [(ngModel)]="candidat.cin">
-            <label>photos</label><input type="file" class="form-control" [(ngModel)]="candidat.photos">
-            <label>birthday</label><input type="text" class="form-control" [(ngModel)]="candidat.bithday">
+                                                     >
+            <label>cin</label><input type="text" class="form-control" >
+            <label>photos</label><input type="file" class="form-control" >
+            <label>birthday</label><input type="text" class="form-control" >
           </div>
         </div>
         <div class="card-footer">
@@ -45,18 +45,6 @@
             <th>description</th>
             </thead>
             <tbody>
-            <tr *ngFor="let c of ville.candidats ">
-              <td>{{c.nom}}</td>
-              <td>{{c.prenom}}</td>
-              <td>{{c.mail}}</td>
-              <td>{{c.cin}}</td>
-              <td>{{c.address}}</td>
-              <td>{{c.numtelephone}}</td>
-              <td>{{c.photos}}</td>
-              <td>{{c.profession}}</td>
-              <td>{{c.bithday}}</td>
-              <td>{{c.description}}</td>
-            </tr>
             </tbody>
           </table>
         </div>

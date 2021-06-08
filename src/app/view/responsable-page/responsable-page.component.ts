@@ -5,7 +5,7 @@ import {Candidat} from '../../Controller/model/candidat.model';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-ville-list',
+  selector: 'app-responsable-page',
   templateUrl: './responsable-page.component.html',
   styleUrls: ['./responsable-page.component.css']
 })

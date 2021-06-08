@@ -4,7 +4,7 @@ import {VilleService} from '../../Controller/service/ville.service';
 import {Candidat} from '../../Controller/model/candidat.model';
 
 @Component({
-  selector: 'app-ville-create',
+  selector: 'app-employe-page',
   templateUrl: './employe-page.component.html',
   styleUrls: ['./employe-page.component.css']
 })
@@ -32,7 +32,9 @@ export class EmployePageComponent implements OnInit {
   public  validate() {
    return  this.villeService.validate();
   }
-
+  closeCreateEmploye() {
+    document.getElementById('addEmployeeModal').style.display = 'none';
+  }
 
 
   // tslint:disable-next-line:typedef
