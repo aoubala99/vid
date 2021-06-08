@@ -1,12 +1,12 @@
 nav {
-  background-color: cadetblue;
+  background-color: cornflowerblue;
 }
 a{
   text-decoration: none;
   color: black;
-  font-family: "Arial Black";
+  font-family: "Arial Rounded MT Bold";
 }
 .nav-link:hover{
-  color: aquamarine;
+  color: slategrey;
 
 }
