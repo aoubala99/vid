@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-lg" style="background-color: aqua;width: 100%" >
+<nav class="navbar navbar-expand-lg" style="background-color:cornflowerblue;width: 100%" >
   <a class="navbar-brand" style=font-weight:bold>sales pilot </a>
   <form class="form-inline">
     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -8,13 +8,14 @@
     <button class="btn btn-link btn-outline-primary"><i class="fa fa-gears"></i></button>
     <i class="fa fa-user-circle fa-2x"></i>
     <span class="navbar-text">user user</span>
+
     <!--<button class="btn btn-link btn-outline-primary"><i class="fa fa-plus"></i></button> -->
   </form>
 </nav>
 <div class="container" style="float: left;width: max-content">
-  <div class="wrapper" style="background-color: lightblue;">
+  <div class="wrapper" style="background-color: grey;">
     <div class="item" style="position: relative">
-      <span class="text">developpment d'une application web</span>
+      <span class="text">Show all details of Project</span>
       <button class="btn" (click)="showDiv()"><i class="fa fa-bars" ></i></button>
        <div class="list-group-item"  style="align-items:center">
          <span class="text">task 1</span>
@@ -31,7 +32,7 @@
     </div>
   </div>
 </div>
-<div class="container" id="projet-display" style="display: none">
+<div class="container" id="projet-display" style="display: inline-block">
   <div class="card">
     <div class="card-header"><div class="row"><div class="col-11"><p style="font-family: 'Arial Black'">detail de projet </p></div>
       <div class="col-1"><button class="btn" (click)="closeTab()"><i class="fa fa-close"></i></button></div></div>
