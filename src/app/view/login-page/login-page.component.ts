@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from '../../Controller/service/user.service';
 import {User} from '../../Controller/model/user.model';
+import {Tool} from '../../Controller/model/tool.model';
 
 
 @Component({
@@ -18,13 +19,17 @@ export class LoginPageComponent implements OnInit {
   get user(): User {
     return this.userService.user;
   }
-
+  set user(value: User) {
+    this.userService.user = value;
+  }
   get users(): Array<User> {
     return this.userService.users;
   }
-  // tslint:disable-next-line:typedef
-  public findUserByPasswordAndUsername(u: User){
-    return this.userService.findUserByPasswordAndUsername(u);
+   findUserByPasswordAndUsername(user: User){
+    console.log(user);
+    return this.userService.findUserByPasswordAndUsername(user);
   }
-
+  get tool(): Tool {
+    return this.userService.tool;
+  }
 }

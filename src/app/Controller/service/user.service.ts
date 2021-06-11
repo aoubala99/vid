@@ -3,11 +3,22 @@ import {HttpClient} from '@angular/common/http';
 import {Candidat} from '../model/candidat.model';
 import {User} from '../model/user.model';
 import {newArray} from '@angular/compiler/src/util';
+import {Tool} from '../model/tool.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+  get tool(): Tool {
+    if (this._tool == null){
+      this._tool = new Tool();
+    }
+    return this._tool;
+  }
+
+  set tool(value: Tool) {
+    this._tool = value;
+  }
 
   constructor(private http: HttpClient) { }
 
@@ -19,7 +30,7 @@ export class UserService {
   private _index: number;
   // tslint:disable-next-line:variable-name
   private _userForShow: User;
-
+  private _tool: Tool;
 
   get userForShow(): User {
     if (this._userForShow == null){
@@ -89,15 +100,13 @@ export class UserService {
     myClone.role = user.role;
     return myClone;
   }
-
-
   // tslint:disable-next-line:typedef
   public findUserByPasswordAndUsername(user: User) {
     // tslint:disable-next-line:max-line-length
     this.http.get<User>('http://localhost:8037/Gestion-TacheProjet/User/login/username/' + user.username + '/password/' + user.password).subscribe(
       data => {
-        this.user = data;
-        console.log(data);
+         this.user = data;
+         console.log(data);
       },
       error => {
         console.log('errooooooor');
