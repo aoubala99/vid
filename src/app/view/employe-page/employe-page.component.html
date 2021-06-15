@@ -1,87 +1,34 @@
-<div class="container" style="display: none">
-  <div class="card">
-    <div class="card-header"><h3>ajouter une ville</h3></div>
-    <div class="card-body">
-      <div class="form-group">
-        <label>nom</label><input type="text" class="form-control" >
-        <label>Code Postal</label><input type="number" class="form-control" >
-      </div>
-      <div class="card col-md-11 ml-5">
-        <div class="card-header"><h3>ajouter un candidat</h3></div>
-        <div class="card-body">
-          <div class="form-group">
-            <label>nom</label><input type="text" class="form-control" >
-            <label>prenom</label><input type="text" class="form-control" >
-            <label>profession</label><input type="text" class="form-control" >
-            <label>mail</label><input type="text" class="form-control" >
-            <label>description</label><input type="text" class="form-control" >
-            <label>address</label><input type="text" class="form-control" >
-            <label>numero de telephone</label><input type="text" class="form-control"
-                                                     >
-            <label>cin</label><input type="text" class="form-control" >
-            <label>photos</label><input type="file" class="form-control" >
-            <label>birthday</label><input type="text" class="form-control" >
-          </div>
-        </div>
-        <div class="card-footer">
-          <button class="btn-block btn-outline-primary" (click)="addCandidat()">add a candidat</button>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header">added candidats</div>
-        <div class="card-body">
-          <table class="table table-striped table-hover ">
-            <thead>
 
-            <th>Nom</th>
-            <th>Prenom</th>
-            <th>Mail</th>
-            <th>Cin</th>
-            <th>Address</th>
-            <th>Numero de telephone</th>
-            <th>Photos</th>
-            <th>Profession</th>
-            <th>Birthday</th>
-            <th>description</th>
-            </thead>
-            <tbody>
-            </tbody>
-          </table>
-        </div>
-      </div>
+<nav class="navbar navbar-expand-lg" style="background-color:cornflowerblue;width: 100% ;margin: 0px;padding: 0px" >
+  <img src="assets/salesPilot/salesPilot.png"  width="70" height="70" >
+  <a class="navbar-brand " href="#" style="font-weight:bold; color: yellow ; margin: 10px; padding-right: -10px" >sales pilot </a>
+  <form class="form-inline">
+
+    <button class="btn btn-link btn-outline-dark" style="background-color: yellow; width : 45px"  (click)="showNotificationDetail()"><i class="fa fa-bell"><span class="badge badge-pill badge-warning" style="float:right ;margin-bottom:-10px;margin-right:-15px;font-size: 10px">2</span></i></button>
+    <button class="btn btn-link btn-outline-primary" style="background-color: yellow; width : 45px"><i class="fa fa-gears"></i></button>
+
+    <div class="navbar" style="padding-left: 800px">
+      <button class="btn " style="padding-right: 50px; color: yellow"><i class="fa fa-user-circle fa-2x"><span class="btn" style="font-weight: bold ; color: yellow">Account</span></i></button>
     </div>
-    <div class="card-footer">
-      <button class="btn-block btn-outline-primary" (click)="save()" [disabled]="!validate()">submit</button>
-    </div>
-  </div>
-</div>
-<nav class="navbar navbar-expand-lg" style="background-color: aqua;width: 100%" >
-<a class="navbar-brand" style=font-weight:bold>sales pilot </a>
-<form class="form-inline">
-  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-  <button class="btn"><i class="fa fa-search"></i></button>
-  <button class="btn btn-link btn-outline-primary" (click)="showNotificationDetail()"><i class="fa fa-bell"><span class="badge badge-pill badge-warning" style="float:right;margin-bottom:-15px;margin-right:-10px;font-size: 10px">2</span></i></button>
-  <button class="btn btn-link btn-outline-primary"><i class="fa fa-gears"></i></button>
-  <i class="fa fa-user-circle fa-2x"></i>
-  <span class="navbar-text">user user</span>
-  <!--<button class="btn btn-link btn-outline-primary"><i class="fa fa-plus"></i></button> -->
-</form>
+
+    <!--<button class="btn btn-link btn-outline-primary"><i class="fa fa-plus"></i></button> -->
+  </form>
 </nav>
 <div class="container" style="float: left;width: max-content">
-  <div class="wrapper" style="background-color: lightblue;">
+  <div class="wrapper" style="background-color: lightsteelblue;">
     <div class="item" style="position: relative">
-      <span class="text">developpment d'une application web</span>
+      <span class="text" style="color: yellow;font-weight:bold ">Show all details of Project</span>
       <button class="btn" (click)="showDetailTask()"><i class="fa fa-bars" ></i></button>
     </div>
     <div class="item">
-      <span class="text">seo pour entreprise xxx</span>
+      <span class="text"></span>
       <button class="btn"><i class="fa fa-bars"></i></button>
     </div>
   </div>
 </div>
 <div class="container" id="task-display" style="display: none">
-  <div class="card">
-    <div class="card-header"><div class="row"><div class="col-11"><p style="font-family: 'Arial Black'">detail de la tache </p></div>
+  <div class="card" style="background-color: lightsteelblue">
+    <div class="card-header" style="background-color: #435d7d" ><div class="row"><div class="col-11"><p style="font-family: 'Arial Black';color: cornflowerblue">detail de la tache </p></div>
       <div class="col-1"><button class="btn" (click)="closeTask()"><i class="fa fa-close"></i></button></div></div>
     </div>
     <div class="card-body">
@@ -106,7 +53,7 @@
         <div class="col-6">completed</div>
       </div>
       <div class="row">
-        <div class="col"><button class="btn-outline-primary">marquer la tache comme complet</button></div>
+        <div class="col"><button class="btn-outline-primary" style="background-color: #435d7d">marquer la tache comme complet</button></div>
       </div>
     </div>
 </div>

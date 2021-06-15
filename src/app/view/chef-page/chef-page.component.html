@@ -1,19 +1,17 @@
 
 
-<nav class="navbar navbar-expand-lg" style="background-color: cornflowerblue ;width: 100%" >
-  <button><img src="assets/salesPilot/salesPilot.png"  width="60" height="60"></button>
-  <a class="navbar-brand" style="font-weight:bold" >Sales Pilot </a>
-  <form class="form-inline">
+<nav class="navbar navbar-expand-lg" style="background-color:cornflowerblue;width: 100% ;margin: 0px;padding: 0px" >
+  <img src="assets/salesPilot/salesPilot.png"  width="70" height="70" >
+  <a class="navbar-brand " href="#" style="font-weight:bold; color: yellow ; margin: 10px; padding-right: -10px" >sales pilot </a>
 
+  <form class="form-inline">
     <button class="btn btn-link btn-outline-dark" style="background-color: yellow ;width : 45px" (click)="projetCreationOpen()"><i class="fa fa-plus" ></i></button>
     <button class="btn btn-link btn-outline-dark" style="background-color: yellow; width : 45px"  (click)="showNotificationDetail()"><i class="fa fa-bell"><span class="badge badge-pill badge-warning" style="float:right ;margin-bottom:-10px;margin-right:-15px;font-size: 10px">2</span></i></button>
     <button class="btn btn-link btn-outline-primary" style="background-color: yellow; width : 45px"><i class="fa fa-gears"></i></button>
-    <div class="navbar" style="padding-left: 400px">
-      <button class="btn "><i class="fa fa-user-circle fa-2x"></i></button>
+    <div class="navbar" style="padding-left: 700px">
+      <button class="btn " style="padding-right: 100px; color: yellow"><i class="fa fa-user-circle fa-2x"><span class="btn" style="font-weight: bold ; color: yellow">Account</span></i></button>
+    </div>
 
-    <span class="navbar-text" style="font-weight: bold ; padding-right: -10px" >Account</span>
-
-  </div>
 
 
   </form>
@@ -39,14 +37,14 @@
       <div class="list-group-item"><button class="btn btn-outline-primary "style="background-color: yellow" (click)="openCreationTask()">ajouter une tache</button></div>
     </div>
     <div class="item">
-      <span class="text">-----------></span>
+      <span class="text"></span>
       <button class="btn"><i class="fa fa-bars"></i></button>
     </div>
   </div>
 </div>
 <div class="container" id="projet-display" style="">
   <div class="card" style="background-color: lightsteelblue">
-    <div class="card-header" style="background-color: yellow"><div class="row" ><div class="col-11" ><p style="font-family: 'Arial Black'">detail de projet </p></div>
+    <div class="card-header" style="background-color: #435d7d"><div class="row" ><div class="col-11" ><p style="font-family: 'Arial Black';color: cornflowerblue">detail de projet </p></div>
       <div class="col-1"><button class="btn-outline-dark" (click)="closeTab()"><i class="fa fa-close"></i></button></div></div>
     </div>
     <div class="card-body">
@@ -91,7 +89,7 @@
 </div>
 <div class="container" id="task-display" style="display: none">
   <div class="card" style="background-color: lightsteelblue">
-    <div class="card-header" style="background-color:yellow "><div class="row"><div class="col-11"><p style="font-family: 'Arial Black'">detail de la tache </p></div>
+    <div class="card-header" style="background-color:#435d7d "><div class="row"><div class="col-11"><p style="font-family: 'Arial Black';color: cornflowerblue">detail de la tache </p></div>
       <div class="col-1"><button class="btn btn-outline-dark" (click)="closeTask()"><i class="fa fa-close"></i></button></div></div>
     </div>
     <div class="card-body">
@@ -126,7 +124,7 @@
         <div class="col-6">completed</div>
       </div>
       <div class="row">
-        <div class="col"><button class=" btn btn-outline-primary" (click)="openUpdateTask()"> modifier la tache</button></div>
+        <div class="col"><button class=" btn btn-outline-primary" style="background-color: #435d7d" (click)="openUpdateTask()"> modifier la tache</button></div>
       </div>
     </div>
   </div>
@@ -169,7 +167,7 @@
 <div class="container" id="projet-creation" style="">
 <div class="card" style="background-color: lightsteelblue">
   <div class="card-header col">
-    <div class="card-header" style="background-color: yellow"><div class="row"><div class="col-11"><p style="font-family: 'Arial Black'">Ajouter un Projet </p></div>
+    <div class="card-header" style="background-color:#435d7d "><div class="row"><div class="col-11"><p style="font-family: 'Arial Black';color: cornflowerblue">Ajouter un Projet </p></div>
       <div class="col-1"><button class="btn-outline-dark" (click)="projetCreationClose()"><i class="fa fa-close"></i></button></div></div>
   </div>
   <div class="card-body" >
@@ -189,7 +187,7 @@
     </div>
   </div>
   <div class="card-footer">
-    <button class="btn-block btn-outline-primary">Ajouter le projet</button>
+    <button class="btn-block btn-outline-primary" style="background-color: #435d7d">Ajouter le projet</button>
   </div>
 </div>
 </div>
@@ -256,7 +254,7 @@
 </div>
 <div class="container" id="task-creation" style="display: none">
   <div class="card" style="background-color: lightsteelblue">
-    <div class="card-header" style="background-color: yellow"><div class="row"><div class="col-11"><p style="font-family: 'Arial Black'">Ajouter une tache </p></div>
+    <div class="card-header" style="background-color: #435d7d"><div class="row"><div class="col-11"><p style="font-family: 'Arial Black'; color: cornflowerblue">Ajouter une tache </p></div>
       <div class="col-1"><button class="btn" (click)="closeCreationTask()"><i class="fa fa-close"></i></button></div></div>
     </div>
     <div class="card-body">
@@ -282,7 +280,7 @@
       </div>
     </div>
     <div class="card-footer">
-      <button class="btn-block btn-outline-primary">Ajouter la tache</button>
+      <button class="btn-block btn-outline-primary" style="background-color: #435d7d">Ajouter la tache</button>
     </div>
   </div>
 </div>

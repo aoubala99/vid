@@ -13,18 +13,20 @@ import {AppRoutingModule, components} from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginPageComponent } from './view/login-page/login-page.component';
 import {ResponsablePageComponent} from './view/responsable-page/responsable-page.component';
+import {EmployePageComponent} from './view/employe-page/employe-page.component';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    components,
-    ViewComponent,
-    ChefPageComponent,
-    AdminPageComponent,
-    LoginPageComponent,
-    ResponsablePageComponent
-  ],
+    declarations: [
+        AppComponent,
+        components,
+        ViewComponent,
+        ChefPageComponent,
+        AdminPageComponent,
+        LoginPageComponent,
+        ResponsablePageComponent,
+        EmployePageComponent
+    ],
     imports: [
         BrowserModule,
         FormsModule,

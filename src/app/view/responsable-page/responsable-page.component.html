@@ -1,21 +1,23 @@
 
-<nav class="navbar navbar-expand-lg" style="background-color:cornflowerblue;width: 100%" >
-  <a class="navbar-brand" style=font-weight:bold>sales pilot </a>
+<nav class="navbar navbar-expand-lg" style="background-color:cornflowerblue;width: 100% ;margin: 0px;padding: 0px" >
+  <img src="assets/salesPilot/salesPilot.png"  width="70" height="70" >
+    <a class="navbar-brand " href="#" style="font-weight:bold; color: yellow ; margin: 10px; padding-right: -10px" >sales pilot </a>
   <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn"><i class="fa fa-search"></i></button>
-    <button class="btn btn-link btn-outline-primary" (click)="showNotificationDetail()"><i class="fa fa-bell"><span class="badge badge-pill badge-warning" style="float:right;margin-bottom:-15px;margin-right:-10px;font-size: 10px">2</span></i></button>
-    <button class="btn btn-link btn-outline-primary"><i class="fa fa-gears"></i></button>
-    <i class="fa fa-user-circle fa-2x"></i>
-    <span class="navbar-text">user user</span>
+
+    <button class="btn btn-link btn-outline-dark" style="background-color: yellow; width : 45px"  (click)="showNotificationDetail()"><i class="fa fa-bell"><span class="badge badge-pill badge-warning" style="float:right ;margin-bottom:-10px;margin-right:-15px;font-size: 10px">2</span></i></button>
+    <button class="btn btn-link btn-outline-primary" style="background-color: yellow; width : 45px"><i class="fa fa-gears"></i></button>
+
+    <div class="navbar" style="padding-left: 800px">
+      <button class="btn " style="padding-right: 50px; color: yellow"><i class="fa fa-user-circle fa-2x"><span class="btn" style="font-weight: bold ; color: yellow">Account</span></i></button>
+    </div>
 
     <!--<button class="btn btn-link btn-outline-primary"><i class="fa fa-plus"></i></button> -->
   </form>
 </nav>
 <div class="container" style="float: left;width: max-content">
-  <div class="wrapper" style="background-color: grey;">
+  <div class="wrapper" style="background-color: lightsteelblue;">
     <div class="item" style="position: relative">
-      <span class="text">Show all details of Project</span>
+      <span class="text" style="color: yellow;font-weight:bold ">Show all details of Project</span>
       <button class="btn" (click)="showDiv()"><i class="fa fa-bars" ></i></button>
        <div class="list-group-item"  style="align-items:center">
          <span class="text">task 1</span>
@@ -27,14 +29,14 @@
       </div>
     </div>
     <div class="item">
-      <span class="text">seo pour entreprise xxx</span>
+      <span class="text"></span>
       <button class="btn"><i class="fa fa-bars"></i></button>
     </div>
   </div>
 </div>
 <div class="container" id="projet-display" style="display: inline-block">
-  <div class="card">
-    <div class="card-header"><div class="row"><div class="col-11"><p style="font-family: 'Arial Black'">detail de projet </p></div>
+  <div class="card" style="background-color: lightsteelblue" >
+    <div class="card-header"style="background-color: #435d7d"><div class="row"><div class="col-11"><p style="font-family: 'Arial Black'; color: cornflowerblue">detail de projet </p></div>
       <div class="col-1"><button class="btn" (click)="closeTab()"><i class="fa fa-close"></i></button></div></div>
     </div>
     <div class="card-body">
@@ -62,8 +64,8 @@
   </div>
 </div>
   <div class="container" id="task-display" style="display: none">
-    <div class="card">
-      <div class="card-header"><div class="row"><div class="col-11"><p style="font-family: 'Arial Black'">detail de la tache </p></div>
+    <div class="card" style="background-color: lightsteelblue">
+      <div class="card-header" style="background-color: #435d7d"><div class="row"><div class="col-11"><p style="font-family: 'Arial Black' ;color: cornflowerblue" >detail de la tache </p></div>
         <div class="col-1"><button class="btn" (click)="closeTask()"><i class="fa fa-close"></i></button></div></div>
       </div>
       <div class="card-body">
@@ -97,8 +99,8 @@
           <div class="col-6">etat de la tache:</div>
           <div class="col-6">completed</div>
         </div>
-        <div class="row">
-          <div class="col"><button class="btn-outline-primary"> valider la tache</button></div>
+        <div class="row" >
+          <div class="col" ><button class="btn-outline-primary" style="background-color: #435d7d"> valider la tache</button></div>
         </div>
       </div>
     </div>
@@ -107,22 +109,37 @@
     <div class="container" id="notification-display" style="display: none">
       <button class="btn btn-dark" (click)="closeNotificationDetail()" ><i class="fa fa-window-close"></i></button>
        <div class="row">
-        <div class="col-md-1 padding-0">user user :</div>
-        <div class="col-md-4 padding-0">objet of notification cbdgxvdfhrtj </div>
-        <div class="col-md-7"></div>
-       </div>
-        <div class="row">
-          mdgnldrenglet rshnethnerinrehoitnhietjyetopyjes(opyjeropyjepye(
-       </div>
-      <div class="row">
-        <div class="col-md-1 padding-0">user user2:</div>
-        <div class="col-md-4 padding-0">objet of notification2 cbdgxvdfhrtj </div>
-        <div class="col-md-7"></div>
-      </div>
-      <div class="row">
-        info about somethingsbdfngtjjjjyjtyktktukuk
-      </div>
-      </div>
+         <div class="row">
+           <div class="notifications" >
+             <ul>
+               <div class="list-group-item"  style="align-items: center">
+                 <li>
+                   <span class="icon"><i class="fa fa-user-circle fa-2x"></i> </span>
+                   <span class="text">jack a modifié la tâche</span>
+
+                 </li></div>
+
+               <div class="list-group-item"  style="align-items: center">
+                 <li>
+                   <span class="icon"><i class="fa fa-user-circle fa-2x"></i> </span>
+                   <span class="text">Nisrine a complété sa tâche</span>
+                 </li></div>
+
+               <div class="list-group-item"  style="align-items: center">
+                 <li>
+                   <span class="icon"><i class="fa fa-user-circle fa-2x"></i> </span>
+                   <span class="text">le chef a supprimé le projet</span>
+                 </li></div>
+               <div class="list-group-item" style="align-items: center">
+                 <li>
+                   <span class="icon"><i class="fa fa-user-circle fa-2x"></i> </span>
+                   <span class="text">Le chef ajout un nouveau projet</span>
+                 </li></div>
+             </ul>
+
+
+           </div>
+         </div>
 
 
 

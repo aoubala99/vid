@@ -25,6 +25,7 @@ export class LoginPageComponent implements OnInit {
   get users(): Array<User> {
     return this.userService.users;
   }
+  // tslint:disable-next-line:typedef
    findUserByPasswordAndUsername(user: User){
     console.log(user);
     return this.userService.findUserByPasswordAndUsername(user);
