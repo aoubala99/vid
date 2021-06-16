@@ -12,20 +12,20 @@
 </form>
 </nav>
 <div class="container" style="float: left;width: max-content">
-  <div class="wrapper" style="background-color: lightblue;">
+  <div class="wrapper" style="background-color: lightsteelblue;">
     <div class="item" style="position: relative">
-      <span class="text">developpment d'une application web</span>
+      <span class="text" style="color: yellow;font-weight:bold ">Show all details of Project</span>
       <button class="btn" (click)="showDetailTask()"><i class="fa fa-bars" ></i></button>
     </div>
     <div class="item">
-      <span class="text">seo pour entreprise xxx</span>
+      <span class="text"></span>
       <button class="btn"><i class="fa fa-bars"></i></button>
     </div>
   </div>
 </div>
 <div class="container" id="task-display" style="display: none">
-  <div class="card">
-    <div class="card-header"><div class="row"><div class="col-11"><p style="font-family: 'Arial Black'">detail de la tache </p></div>
+  <div class="card" style="background-color: lightsteelblue">
+    <div class="card-header" style="background-color: #435d7d" ><div class="row"><div class="col-11"><p style="font-family: 'Arial Black';color: cornflowerblue">detail de la tache </p></div>
       <div class="col-1"><button class="btn" (click)="closeTask()"><i class="fa fa-close"></i></button></div></div>
     </div>
     <div class="card-body">
@@ -50,7 +50,7 @@
         <div class="col-6">completed</div>
       </div>
       <div class="row">
-        <div class="col"><button class="btn-outline-primary">marquer la tache comme complet</button></div>
+        <div class="col"><button class="btn-outline-primary" style="background-color: #435d7d">marquer la tache comme complet</button></div>
       </div>
     </div>
 </div>
