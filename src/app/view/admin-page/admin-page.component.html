@@ -1,4 +1,5 @@
 <!-- Navbar -->
+<body>
 <nav class="navbar navbar-expand-lg navbar-light">
   <!-- Container wrapper -->
   <div class="container-fluid">
@@ -10,8 +11,7 @@
       data-mdb-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent"
       aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+      aria-label="Toggle navigation">
       <i class="fas fa-bars"></i>
     </button>
 
@@ -24,22 +24,22 @@
       <!-- Left links -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="chef" routerLink="chef-management" routerLinkActive="active">chefs des projets</a>
+          <a class="nav-link"  routerLink="/chef-management" routerLinkActive="active">chefs des projets</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="responsable" routerLink="responsable-management" routerLinkActive="active">Responsables</a>
+          <a class="nav-link" href="responsable" routerLink="/responsable-management" routerLinkActive="active">Responsables</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="employes" routerLink="employe-management" routerLinkActive="active">Employés</a>
+          <a class="nav-link" routerLink="/employe-management" routerLinkActive="active">Employés</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="clients" routerLink="client-management" routerLinkActive="active">Clients</a>
+          <a class="nav-link" href="clients" routerLink="/client-management" routerLinkActive="active">Clients</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="utilisateurs" routerLink="user-management" routerLinkActive="active">Utilisateurs</a>
+          <a class="nav-link" href="utilisateurs" routerLink="/user-management" routerLinkActive="active">Utilisateurs</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="administrateurs" routerLink="admin-management" routerLinkActive="active">administrateurs</a>
+          <a class="nav-link" href="administrateurs" routerLink="/admin-management" routerLinkActive="active">administrateurs</a>
         </li>
       </ul>
       <!-- Left links -->
@@ -49,6 +49,8 @@
     </div>
    </div>
   <!-- Container wrapper -->
-</nav>
 
-<!-- Navbar -->
+</nav>
+</body>
+<router-outlet></router-outlet>
+

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {UserService} from '../../Controller/service/user.service';
 import {User} from '../../Controller/model/user.model';
 import {Tool} from '../../Controller/model/tool.model';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,9 @@ export class LoginPageComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  get isLogged(): boolean {
+    return this.userService.isLogged;
+  }
   get user(): User {
     return this.userService.user;
   }
@@ -26,8 +29,9 @@ export class LoginPageComponent implements OnInit {
     return this.userService.users;
   }
    findUserByPasswordAndUsername(user: User){
-    console.log(user);
-    return this.userService.findUserByPasswordAndUsername(user);
+    console.log(user.username);
+     this.userService.findUserByPasswordAndUsername(user);
+
   }
   get tool(): Tool {
     return this.userService.tool;

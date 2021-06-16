@@ -1,3 +1,4 @@
+<app-admin-page></app-admin-page>
 <div class="container">
   <html lang="en">
   <head>
@@ -114,24 +115,24 @@
       <div class="card-body">
         <div class="form-group">
           <label>Nom</label>
-          <input type="email" class="form-control" required>
+          <input type="email" class="form-control" [(ngModel)]="client.nom" required>
         </div>
         <div class="form-group">
           <label>Adresse</label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" [(ngModel)]="client.address">
         </div>
         <div class="form-group">
           <label>Telephone</label>
-          <input type="text" class="form-control" required>
+          <input type="text" class="form-control" [(ngModel)]="client.telephone" required>
         </div>
         <div class="form-group">
           <label>Mail</label>
-          <input type="text" class="form-control" required>
+          <input type="text" class="form-control" [(ngModel)]="client.mail" required>
         </div>
       </div>
       <div class="card-footer">
         <input type="button" class="btn btn-default" id="close"value="Cancel" (click)="closeEmployeCreate()">
-        <button class="btn btn-success" value="Add">ajouter</button>
+        <button class="btn btn-success" value="Add" (click)="save()">ajouter</button>
       </div>
     </form>
   </div>

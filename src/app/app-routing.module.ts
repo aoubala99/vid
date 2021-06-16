@@ -9,8 +9,11 @@ import {ChefManagementComponent} from './view/chef-management/chef-management.co
 import {AdminManagementComponent} from './view/admin-management/admin-management.component';
 import {ClientManagementComponent} from './view/client-management/client-management.component';
 import {UserManagementComponent} from './view/user-management/user-management.component';
+import {LoginPageComponent} from './view/login-page/login-page.component';
+import {ChefPageComponent} from './view/chef-page/chef-page.component';
 
-export const components = [EmployeManagementComponent, ResponsableManagementComponent, ChefManagementComponent , AdminManagementComponent , ClientManagementComponent , UserManagementComponent];
+// tslint:disable-next-line:max-line-length
+export const components = [EmployeManagementComponent, ResponsableManagementComponent, ChefManagementComponent , AdminManagementComponent , ClientManagementComponent , UserManagementComponent, EmployePageComponent, ResponsablePageComponent,ChefPageComponent,AdminPageComponent ];
 
 const routes: Routes = [
   { path: 'employe-management', component: components[0]},
@@ -19,12 +22,13 @@ const routes: Routes = [
   { path: 'admin-management', component: components[3]},
   { path: 'client-management', component: components[4]},
   { path: 'user-management', component: components[5]},
-  { path: '' , component: components[0]},
-  { path: '**', component: AdminPageComponent
-  }
-
+  { path: 'employe-page' , component: components[6] },
+  { path: 'responsable-page' , component: components[7] },
+  { path: 'chef-page' , component: components[8] },
+  { path: 'admin-page' , component: components[9] },
+  { path: '**', component: LoginPageComponent,
+  },
 ];
-
 
 @NgModule({
   imports: [

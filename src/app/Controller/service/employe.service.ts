@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Employe} from '../model/employe.model';
 import {Observable} from 'rxjs';
+import {UserService} from './user.service';
 
 
 
@@ -9,16 +10,15 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class EmployeService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private userSrevice: UserService) { }
   // tslint:disable-next-line:variable-name
   private _employe: Employe;
   // tslint:disable-next-line:variable-name
   private _employes: Array<Employe>;
   // tslint:disable-next-line:variable-name
+
   private _index: number;
   private employeUrl = 'http://localhost:8037/Gestion-TacheProjet/employe/';
-
   get employe(): Employe {
     if (this._employe == null){
       this._employe = new Employe();
@@ -29,7 +29,6 @@ export class EmployeService {
   set employe(value: Employe) {
     this._employe = value;
   }
-
   get employes(): Array<Employe> {
     return this._employes;
   }

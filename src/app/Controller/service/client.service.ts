@@ -47,6 +47,7 @@ export class ClientService {
     myClone.nom = client.nom;
     myClone.address = client.address;
     myClone.mail = client.mail;
+    myClone.telephone = client.telephone;
     return myClone;
   }
   // tslint:disable-next-line:typedef
@@ -75,5 +76,23 @@ export class ClientService {
         console.log(error);
       }
     );
+  }
+  public save() {
+    this.http.post('http://localhost:8037/Gestion-TacheProjet/client/', this.client).subscribe(
+      data => {
+        if (data > 0) {
+          this.clients.push(this.clone(this.client));
+          console.log(this.client);
+          this.client = null;
+
+        } else {
+          alert('the element youre about to insert already exist ');
+        }
+      },
+      error => {
+        console.log('errooooooor');
+      }
+    );
+
   }
 }

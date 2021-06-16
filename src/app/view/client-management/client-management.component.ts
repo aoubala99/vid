@@ -47,4 +47,7 @@ export class ClientManagementComponent implements OnInit {
   closeWarning() {
     document.getElementById('deleteEmployeeModal').style.display = 'none';
   }
+  save(){
+    return  this.clientService.save();
+  }
 }

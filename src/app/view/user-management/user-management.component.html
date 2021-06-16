@@ -1,4 +1,5 @@
-<div class="container">
+<app-admin-page></app-admin-page>
+  <div class="container">
   <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -95,4 +96,82 @@
 
   </body>
   </html>
+</div>
+<div *ngIf="">
+  <nav class="navbar navbar-expand-lg" style="background-color: aqua;width: 100%" >
+    <a class="navbar-brand" style=font-weight:bold>sales pilot </a>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn"><i class="fa fa-search"></i></button>
+      <button class="btn btn-link btn-outline-primary" (click)="showNotificationDetail()"><i class="fa fa-bell"><span class="badge badge-pill badge-warning" style="float:right;margin-bottom:-15px;margin-right:-10px;font-size: 10px">2</span></i></button>
+      <button class="btn btn-link btn-outline-primary"><i class="fa fa-gears"></i></button>
+      <i class="fa fa-user-circle fa-2x"></i>
+      <span class="navbar-text">user user</span>
+      <!--<button class="btn btn-link btn-outline-primary"><i class="fa fa-plus"></i></button> -->
+    </form>
+  </nav>
+  <div class="container" style="float: left;width: max-content">
+    <div class="wrapper" style="background-color: lightblue;">
+      <div class="item" style="position: relative">
+        <span class="text">developpment d'une application web</span>
+        <button class="btn" (click)="showDetailTask()"><i class="fa fa-bars" ></i></button>
+      </div>
+      <div class="item">
+        <span class="text">seo pour entreprise xxx</span>
+        <button class="btn"><i class="fa fa-bars"></i></button>
+      </div>
+    </div>
+  </div>
+  <div class="container" id="task-display" style="display: none">
+    <div class="card">
+      <div class="card-header"><div class="row"><div class="col-11"><p style="font-family: 'Arial Black'">detail de la tache </p></div>
+        <div class="col-1"><button class="btn" (click)="closeTask()"><i class="fa fa-close"></i></button></div></div>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-6">nom :</div>
+          <div class="col-6">tache1 </div>
+        </div>
+        <div class="row">
+          <div class="col-6">description :</div>
+          <div class="col-6">tache tache tache </div>
+        </div>
+        <div class="row">
+          <div class="col-6">date de debut :</div>
+          <div class="col-6">12-10-2012 </div>
+        </div>
+        <div class="row">
+          <div class="col-6">date de fin :</div>
+          <div class="col-6">12-12-2012 </div>
+        </div>
+        <div class="row">
+          <div class="col-6">etat de la tache:</div>
+          <div class="col-6">completed</div>
+        </div>
+        <div class="row">
+          <div class="col"><button class="btn-outline-primary">marquer la tache comme complet</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" id="notification-display" style="display: none">
+    <button class="btn btn-dark" (click)="closeNotificationDetail()" ><i class="fa fa-window-close"></i></button>
+    <div class="row">
+      <div class="col-md-1 padding-0">user user :</div>
+      <div class="col-md-4 padding-0">objet of notification cbdgxvdfhrtj </div>
+      <div class="col-md-7"></div>
+    </div>
+    <div class="row">
+      mdgnldrenglet rshnethnerinrehoitnhietjyetopyjes(opyjeropyjepye(
+    </div>
+    <div class="row">
+      <div class="col-md-1 padding-0">user user2:</div>
+      <div class="col-md-4 padding-0">objet of notification2 cbdgxvdfhrtj </div>
+      <div class="col-md-7"></div>
+    </div>
+    <div class="row">
+      info about somethingsbdfngtjjjjyjtyktktukuk
+    </div>
+  </div>
+
 </div>

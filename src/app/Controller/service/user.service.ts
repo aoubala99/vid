@@ -1,14 +1,23 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Candidat} from '../model/candidat.model';
 import {User} from '../model/user.model';
-import {newArray} from '@angular/compiler/src/util';
 import {Tool} from '../model/tool.model';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+  get isLogged(): boolean {
+    if (this._isLogged == null){
+      this._isLogged = false;
+    }
+    return this._isLogged;
+  }
+
+  set isLogged(value: boolean) {
+    this._isLogged = value;
+  }
   get tool(): Tool {
     if (this._tool == null){
       this._tool = new Tool();
@@ -20,7 +29,7 @@ export class UserService {
     this._tool = value;
   }
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   // tslint:disable-next-line:variable-name
   private _user: User;
@@ -31,6 +40,7 @@ export class UserService {
   // tslint:disable-next-line:variable-name
   private _userForShow: User;
   private _tool: Tool;
+  public _isLogged: boolean;
 
   get userForShow(): User {
     if (this._userForShow == null){
@@ -106,6 +116,24 @@ export class UserService {
     this.http.get<User>('http://localhost:8037/Gestion-TacheProjet/User/login/username/' + user.username + '/password/' + user.password).subscribe(
       data => {
          this.user = data;
+         this._isLogged = true;
+         switch (this.user.role) {
+          case 'admin':
+            this.router.navigate(['/admin-page']);
+            break;
+          case 'responsable':
+            this.router.navigate(['/responsable-page']);
+            break;
+          case 'chef':
+            this.router.navigate(['/chef-page']);
+            break;
+            case 'employe':
+             this.router.navigate(['/employe-page']);
+             break;
+          default:
+            break;
+        }
+        // tslint:disable-next-line:triple-equals
          console.log(data);
       },
       error => {

@@ -1,17 +1,4 @@
-<div class="container">
-  <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  </head>
-  <body>
+ <app-admin-page></app-admin-page>
   <div class="container">
     <div class="table-wrapper">
       <div class="table-title">
@@ -20,7 +7,7 @@
             <h2><b>chefs des projets</b></h2>
           </div>
           <div class="col-sm-6">
-            <button class="btn btn-primary" id="btn" data-toggle="modal" (click)="showCreateEmploye()"><i class="fa fa-plus"></i> <span>ajouter un chef de projet</span></button>
+           <button class="btn btn-primary" id="btn" data-toggle="modal" (click)="showCreateEmploye()"><i class="fa fa-plus"></i> <span>ajouter un chef de projet</span></button>
           </div>
         </div>
       </div>
@@ -31,21 +18,36 @@
           <th>Prenom</th>
           <th>Address</th>
           <th>Mail</th>
-          <th>Telephone</th>
           <th>action</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>nom</td>
-          <td>prenom</td>
-          <td>address}}</td>
-          <td>mail}}</td>
-          <td>telephone}}</td>
+        <tr *ngFor="let c of chefs" >
+          <td>{{c.nom}}</td>
+          <td>{{c.prenom}}</td>
+          <td>{{c.address}}</td>
+          <td>{{c.mail}}</td>
           <td>
             <a  class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit" (click)="showEditEmploye()">&#xE254;</i></a>
             <a  class="delete" data-toggle="modal" ><i class="material-icons" data-toggle="tooltip" title="Delete" (click)="showWarning()">&#xE872;</i></a>
           </td>
+          <div id="deleteEmployeeModal" class="container-sm"  style="display: none">
+            <div class="card">
+              <form>
+                <div class="card-header">
+                  <h4 class="card-title">supprimer le chef de projet</h4>
+                </div>
+                <div class="card-body">
+                  <p>vous etes sure que vous voulez supprimer ce employe?</p>
+                  <p class="text-warning"><small>NO RETURN.</small></p>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-warning" (click)="delete(c)">supprimer</button>
+                  <button class="btn btn-danger" (click)="closeWarning()">annuler</button>
+                </div>
+              </form>
+            </div>
+          </div>
         </tr>
         </tbody>
       </table>
@@ -90,26 +92,8 @@
     </div>
 
   <!-- Delete Modal HTML -->
-  <div id="deleteEmployeeModal" class="container-sm"  style="display: none">
-    <div class="card">
-        <form>
-          <div class="card-header">
-            <h4 class="card-title">supprimer le chef de projet</h4>
-          </div>
-          <div class="card-body">
-            <p>vous etes sure que vous voulez supprimer ce employe?</p>
-            <p class="text-warning"><small>NO RETURN.</small></p>
-          </div>
-          <div class="modal-footer">
-           <button class="btn btn-warning">supprimer</button>
-            <button class="btn btn-danger" (click)="closeWarning()">annuler</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </body>
-  </html>
-</div>
+
+
 <div  class="container-sm" id="create" style="display: none">
   <div class="card">
     <form>

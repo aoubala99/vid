@@ -1,4 +1,6 @@
-<div class="container">
+
+  <app-admin-page></app-admin-page>
+  <div class="container">
   <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -17,7 +19,7 @@
       <div class="table-title">
         <div class="row">
           <div class="col-sm-6">
-            <h2><b>Employees</b></h2>
+            <h2><b>Responsables</b></h2>
           </div>
           <div class="col-sm-6">
             <button class="btn btn-primary" id="btn" data-toggle="modal" (click)="showCreateEmploye()"><i class="fa fa-plus"></i> <span>ajouter un Responsable</span></button>
@@ -36,45 +38,38 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>nom</td>
-          <td>prenom</td>
-          <td>address}}</td>
-          <td>mail}}</td>
-          <td>telephone}}</td>
+        <tr *ngFor="let r of responsables">
+          <td>{{r.nom}}</td>
+          <td>{{r.prenom}}</td>
+          <td>{{r.address}}</td>
+          <td>{{r.mail}}</td>
+          <td>{{r.telephone}}</td>
           <td>
             <a class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit" (click)="showEditEmploye()">&#xE254;</i></a>
             <a  class="delete" data-toggle="modal" ><i class="material-icons" data-toggle="tooltip" title="Delete" (click)="showWarning()">&#xE872;</i></a>
           </td>
-        </tr>
-        <tr>
-          <td>nom}}</td>
-          <td>prenom}}</td>
-          <td>address}}</td>
-          <td>mail}}</td>
-          <td>telephone}}</td>
-          <td>
-            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-          </td>
+          <div id="deleteEmployeeModal" class="container-sm"  style="display: none">
+            <div class="card">
+              <form>
+                <div class="card-header">
+                  <h4 class="card-title">supprimer le responsable</h4>
+                </div>
+                <div class="card-body">
+                  <p>vous etes sure que vous voulez supprimer ce responsable?</p>
+                  <p class="text-warning"><small>NO RETURN.</small></p>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-warning" (click)="delete(r)" >supprimer</button>
+                  <button class="btn btn-danger" (click)="closeWarning()">annuler</button>
+                </div>
+              </form>
+            </div>
+          </div>
         </tr>
         </tbody>
       </table>
-      <div class="clearfix">
-        <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
-        <ul class="pagination">
-          <li class="page-item disabled"><a href="#">Previous</a></li>
-          <li class="page-item"><a href="#" class="page-link">1</a></li>
-          <li class="page-item"><a href="#" class="page-link">2</a></li>
-          <li class="page-item active"><a href="#" class="page-link">3</a></li>
-          <li class="page-item"><a href="#" class="page-link">4</a></li>
-          <li class="page-item"><a href="#" class="page-link">5</a></li>
-          <li class="page-item"><a href="#" class="page-link">Next</a></li>
-        </ul>
-      </div>
     </div>
   </div>
-
   <!-- Edit Modal HTML -->
   <div class="container-sm" id="editEmployeeModal" style="display: none" >
       <div class="card">
@@ -107,25 +102,6 @@
           <div class="modal-footer">
             <button class="btn btn-success">sauvegarder</button>
             <button class="btn btn-danger" (click)="closeEmployeEdit()">annuler</button>
-          </div>
-        </form>
-      </div>
-    </div>
-
-  <!-- Delete Modal HTML -->
-  <div id="deleteEmployeeModal" class="container-sm"  style="display: none">
-    <div class="card">
-        <form>
-          <div class="card-header">
-            <h4 class="card-title">supprimer le responsable</h4>
-          </div>
-          <div class="card-body">
-            <p>vous etes sure que vous voulez supprimer ce responsable?</p>
-            <p class="text-warning"><small>NO RETURN.</small></p>
-          </div>
-          <div class="modal-footer">
-           <button class="btn btn-warning">supprimer</button>
-            <button class="btn btn-danger" (click)="closeWarning()">annuler</button>
           </div>
         </form>
       </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Ville} from '../../Controller/model/ville.model';
 import {VilleService} from '../../Controller/service/ville.service';
 import {Candidat} from '../../Controller/model/candidat.model';
+import {UserService} from '../../Controller/service/user.service';
 
 @Component({
   selector: 'app-employe-page',
@@ -10,9 +11,13 @@ import {Candidat} from '../../Controller/model/candidat.model';
 })
 export class EmployePageComponent implements OnInit {
 
-  constructor(private villeService: VilleService) { }
+  constructor(private villeService: VilleService, private userService: UserService) { }
 
   ngOnInit(): void {
+    console.log(this.islog);
+  }
+  get islog(): boolean {
+    return this.userService.isLogged;
   }
   get ville(): Ville{
     return this.villeService.ville;
@@ -32,11 +37,6 @@ export class EmployePageComponent implements OnInit {
   public  validate() {
    return  this.villeService.validate();
   }
-  closeCreateEmploye() {
-    document.getElementById('addEmployeeModal').style.display = 'none';
-  }
-
-
   // tslint:disable-next-line:typedef
   showDetailTask() {
     document.getElementById('task-display').style.display = 'block';
