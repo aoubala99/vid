@@ -159,6 +159,7 @@ export class UserService {
       }
     );
   }
+  // tslint:disable-next-line:typedef
   public findAll(){
     this.http.get<Array<User>>('http://localhost:8037/Gestion-TacheProjet/User/').subscribe(
       data => {

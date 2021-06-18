@@ -1,0 +1,27 @@
+<div class="container" id="create" style="display: none">
+<div class="card">
+  <div class="card-header">ajouter un client</div>
+<div class="card-body">
+  <div class="form-group">
+    <label >Nom</label>
+    <input type="email" class="form-control" [(ngModel)]="client.nom">
+  </div>
+  <div class="form-group">
+    <label>Adresse</label>
+    <input type="text" class="form-control" [(ngModel)]="client.address">
+  </div>
+  <div class="form-group">
+    <label>Telephone</label>
+    <input type="text" class="form-control" [(ngModel)]="client.telephone">
+  </div>
+  <div class="form-group">
+    <label>Mail</label>
+    <input type="text" class="form-control" [(ngModel)]="client.mail" >
+  </div>
+</div>
+  <div class="card-footer">
+    <button class="btn btn-success" (click)="save()"> save</button>
+    <button class="btn btn-danger" (click)="closeEmployeCreate()">annuler</button>
+  </div>
+</div>
+</div>

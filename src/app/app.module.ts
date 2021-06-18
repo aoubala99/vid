@@ -14,6 +14,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginPageComponent } from './view/login-page/login-page.component';
 import {ResponsablePageComponent} from './view/responsable-page/responsable-page.component';
 import {EmployePageComponent} from './view/employe-page/employe-page.component';
+import { ClientCreateComponent } from './view/client-management/client-create/client-create.component';
+import { ClientListComponent } from './view/client-management/client-list/client-list.component';
+import { EmployeListComponent } from './view/employe-management/employe-list/employe-list.component';
+import { EmployeCreateComponent } from './view/employe-management/employe-create/employe-create.component';
 
 
 @NgModule({
@@ -25,7 +29,11 @@ import {EmployePageComponent} from './view/employe-page/employe-page.component';
     AdminPageComponent,
     LoginPageComponent,
     ResponsablePageComponent,
-    EmployePageComponent
+    EmployePageComponent,
+    ClientCreateComponent,
+    ClientListComponent,
+    EmployeListComponent,
+    EmployeCreateComponent
   ],
     imports: [
         BrowserModule,

@@ -82,7 +82,7 @@ export class ClientService {
       data => {
         if (data > 0) {
           this.clients.push(this.clone(this.client));
-          console.log(this.client);
+          console.log(data);
           this.client = null;
 
         } else {
