@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {Responsable} from '../model/responsable.model';
 import {newArray} from '@angular/compiler/src/util';
+import {User} from '../model/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -89,6 +90,17 @@ export class ResponsableService {
         console.log(data);
       }, error => {
         console.log(error);
+      }
+    );
+  }
+  public  findRespoByUser(ref: string) {
+    // tslint:disable-next-line:max-line-length
+    this.http.get<Responsable>('http://localhost:8037/Gestion-TacheProjet/Responsable/user/ref/' + ref).subscribe(
+      data => {
+        this.responsable = data;
+        console.log(data);
+      }, error => {
+        console.log('erooooooooooooooor');
       }
     );
   }

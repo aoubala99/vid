@@ -11,9 +11,10 @@ import {ClientManagementComponent} from './view/client-management/client-managem
 import {UserManagementComponent} from './view/user-management/user-management.component';
 import {LoginPageComponent} from './view/login-page/login-page.component';
 import {ChefPageComponent} from './view/chef-page/chef-page.component';
+import {AdminCreateComponent} from './view/admin-management/admin-create/admin-create.component';
 
 // tslint:disable-next-line:max-line-length
-export const components = [EmployeManagementComponent, ResponsableManagementComponent, ChefManagementComponent , AdminManagementComponent , ClientManagementComponent , UserManagementComponent, EmployePageComponent, ResponsablePageComponent,ChefPageComponent,AdminPageComponent ];
+export const components = [EmployeManagementComponent, ResponsableManagementComponent, ChefManagementComponent , AdminManagementComponent , ClientManagementComponent , UserManagementComponent, EmployePageComponent, ResponsablePageComponent, ChefPageComponent, AdminPageComponent ];
 
 const routes: Routes = [
   { path: 'employe-management', component: components[0]},

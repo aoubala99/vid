@@ -1,0 +1,28 @@
+<div class="container" id="create" style="display: none">
+  <div class="card">
+    <div class="card-header">ajouter un administrateur</div>
+    <div class="card-body">
+      <div class="form-group">
+        <label >Nom</label>
+        <input type="email" class="form-control" [(ngModel)]="admin.nom">
+      </div>
+      <div class="form-group">
+        <label>Prenom</label>
+        <input type="text" class="form-control" [(ngModel)]="admin.prenom">
+      </div>
+      <div class="form-group">
+        <label>Mail</label>
+        <input type="text" class="form-control" [(ngModel)]="admin.mail" >
+      </div>
+      <div class="form-group">
+        <label>Telephone</label>
+        <input type="text" class="form-control" [(ngModel)]="admin.telephone" >
+      </div>
+    </div>
+    <div class="card-footer">
+      <button class="btn btn-success" (click)="save()"> save</button>
+      <button class="btn btn-danger" (click)="closeEmployeCreate()">annuler</button>
+    </div>
+  </div>
+</div>
+

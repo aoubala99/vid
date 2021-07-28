@@ -7,22 +7,18 @@
   <button class="btn btn-link btn-outline-primary" (click)="showNotificationDetail()"><i class="fa fa-bell"><span class="badge badge-pill badge-warning" style="float:right;margin-bottom:-15px;margin-right:-10px;font-size: 10px">2</span></i></button>
   <button class="btn btn-link btn-outline-primary"><i class="fa fa-gears"></i></button>
   <i class="fa fa-user-circle fa-2x"></i>
-  <span class="navbar-text">user user</span>
-  <!--<button class="btn btn-link btn-outline-primary"><i class="fa fa-plus"></i></button> -->
+  <span class="navbar-text">{{employe.nom}}  {{employe.prenom}}</span>
 </form>
 </nav>
-<div class="container" style="float: left;width: max-content">
+<div><button (click)="find(employe)"></button>
+</div>
+<div class="container" style="float: left;width: max-content" *ngFor="let c of tacheEmployes" >
   <div class="wrapper" style="background-color: lightsteelblue;">
     <div class="item" style="position: relative">
-      <span class="text" style="color: yellow;font-weight:bold ">Show all details of Project</span>
+      <span class="text" style="color: yellow;font-weight:bold ">{{c.tache.projet.nom}}</span>
       <button class="btn" (click)="showDetailTask()"><i class="fa fa-bars" ></i></button>
     </div>
-    <div class="item">
-      <span class="text"></span>
-      <button class="btn"><i class="fa fa-bars"></i></button>
-    </div>
   </div>
-</div>
 <div class="container" id="task-display" style="display: none">
   <div class="card" style="background-color: lightsteelblue">
     <div class="card-header" style="background-color: #435d7d" ><div class="row"><div class="col-11"><p style="font-family: 'Arial Black';color: cornflowerblue">detail de la tache </p></div>
@@ -31,28 +27,33 @@
     <div class="card-body">
       <div class="row">
         <div class="col-6">nom :</div>
-        <div class="col-6">tache1 </div>
+        <div class="col-6">{{c.tache.nom}} </div>
       </div>
       <div class="row">
         <div class="col-6">description :</div>
-        <div class="col-6">tache tache tache </div>
+        <div class="col-6">{{c.tache.description}} </div>
       </div>
       <div class="row">
         <div class="col-6">date de debut :</div>
-        <div class="col-6">12-10-2012 </div>
+        <div class="col-6">{{c.tache.dateDebut}} </div>
       </div>
       <div class="row">
         <div class="col-6">date de fin :</div>
-        <div class="col-6">12-12-2012 </div>
+        <div class="col-6">{{c.tache.dateFin}} </div>
       </div>
       <div class="row">
         <div class="col-6">etat de la tache:</div>
-        <div class="col-6">completed</div>
+        <div class="col-6">{{c.tache.etatTache.statue}}</div>
+      </div>
+      <div class="row">
+        <div class="col-6">responsable:</div>
+        <div class="col-6">{{c.tache.responsable.prenom}} {{c.tache.responsable.nom}}</div>
       </div>
       <div class="row">
         <div class="col"><button class="btn-outline-primary" style="background-color: #435d7d">marquer la tache comme complet</button></div>
       </div>
     </div>
+</div>
 </div>
 </div>
 <div class="container" id="notification-display" style="display: none">
@@ -74,5 +75,4 @@
     info about somethingsbdfngtjjjjyjtyktktukuk
   </div>
 </div>
-
 

@@ -3,13 +3,25 @@ import {HttpClient} from '@angular/common/http';
 import {User} from '../model/user.model';
 import {Tool} from '../model/tool.model';
 import {Router} from '@angular/router';
+import {Responsable} from '../model/responsable.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+  get responsable(): Responsable {
+    if (this._responsable == null) {
+      return this._responsable = new Responsable();
+    }
+    return this._responsable;
+  }
+
+  set responsable(value: Responsable) {
+    this._responsable = value;
+  }
+
   get isLogged(): boolean {
-    if (this._isLogged == null){
+    if (this._isLogged == null) {
       this._isLogged = false;
     }
     return this._isLogged;
@@ -18,8 +30,9 @@ export class UserService {
   set isLogged(value: boolean) {
     this._isLogged = value;
   }
+
   get tool(): Tool {
-    if (this._tool == null){
+    if (this._tool == null) {
       this._tool = new Tool();
     }
     return this._tool;
@@ -29,7 +42,8 @@ export class UserService {
     this._tool = value;
   }
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) {
+  }
 
   // tslint:disable-next-line:variable-name
   private _user: User;
@@ -41,9 +55,10 @@ export class UserService {
   private _userForShow: User;
   private _tool: Tool;
   public _isLogged: boolean;
+  private _responsable: Responsable;
 
   get userForShow(): User {
-    if (this._userForShow == null){
+    if (this._userForShow == null) {
       this._userForShow = new User();
     }
     return this._userForShow;
@@ -54,7 +69,7 @@ export class UserService {
   }
 
   get user(): User {
-    if (this._user == null){
+    if (this._user == null) {
       this._user = new User();
     }
     return this._user;
@@ -65,7 +80,7 @@ export class UserService {
   }
 
   get users(): Array<User> {
-    if (this._users == null){
+    if (this._users == null) {
       this._users = new Array<User>();
     }
     return this._users;
@@ -81,6 +96,7 @@ export class UserService {
     this.user = this.clone(u);
     this._index = i;
   }
+
   // tslint:disable-next-line:typedef
   public save() {
     this.http.post('http://localhost:8037/Gestion-TacheProjet/User', this.user).subscribe(
@@ -110,14 +126,16 @@ export class UserService {
     myClone.role = user.role;
     return myClone;
   }
+
   // tslint:disable-next-line:typedef
   public findUserByPasswordAndUsername(user: User) {
     // tslint:disable-next-line:max-line-length
     this.http.get<User>('http://localhost:8037/Gestion-TacheProjet/User/login/username/' + user.username + '/password/' + user.password).subscribe(
       data => {
-         this.user = data;
-         this._isLogged = true;
-         switch (this.user.role) {
+        this.user = data;
+        localStorage.setItem('reference', JSON.stringify(data.ref));
+        this._isLogged = true;
+        switch (this.user.role) {
           case 'admin':
             this.router.navigate(['/admin-page']);
             break;
@@ -127,14 +145,14 @@ export class UserService {
           case 'chef':
             this.router.navigate(['/chef-page']);
             break;
-            case 'employe':
-             this.router.navigate(['/employe-page']);
-             break;
+          case 'employe':
+            this.router.navigate(['/employe-page']);
+            break;
           default:
             break;
         }
         // tslint:disable-next-line:triple-equals
-         console.log(data);
+        console.log(data);
       },
       error => {
         console.log('errooooooor');
@@ -159,8 +177,9 @@ export class UserService {
       }
     );
   }
+
   // tslint:disable-next-line:typedef
-  public findAll(){
+  public findAll() {
     this.http.get<Array<User>>('http://localhost:8037/Gestion-TacheProjet/User/').subscribe(
       data => {
         this.users = data;
@@ -168,8 +187,9 @@ export class UserService {
       }, error => {
         console.log('error');
       }
-  );
+    );
   }
 
+  // tslint:disable-next-line:typedef
 
 }

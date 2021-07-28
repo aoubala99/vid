@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Ville} from '../../Controller/model/ville.model';
-import {VilleService} from '../../Controller/service/ville.service';
-import {Candidat} from '../../Controller/model/candidat.model';
 import {UserService} from '../../Controller/service/user.service';
+import {EmployeService} from '../../Controller/service/employe.service';
+import {Employe} from '../../Controller/model/employe.model';
+import {TacheService} from '../../Controller/service/tache.service';
+import {TacheEmploye} from '../../Controller/model/tacheEmploye.model';
 
 @Component({
   selector: 'app-employe-page',
@@ -11,37 +12,34 @@ import {UserService} from '../../Controller/service/user.service';
 })
 export class EmployePageComponent implements OnInit {
 
-  constructor(private villeService: VilleService, private userService: UserService) { }
-
+  constructor(private employeService: EmployeService, private userService: UserService, private tacheService: TacheService) { }
   ngOnInit(): void {
-    console.log(this.islog);
+     this.employeService.findEmpyUser(this.getInfo());
+
   }
+  vi(){
+    return this.ngOnInit();
+  }
+
   get islog(): boolean {
     return this.userService.isLogged;
   }
-  get ville(): Ville{
-    return this.villeService.ville;
+  getInfo(){
+    return  JSON.parse(localStorage.getItem('reference'));
   }
-  get candidat(): Candidat{
-   return  this.villeService.candidat;
-  }
-  // tslint:disable-next-line:typedef
-  public save(){
-    return this.villeService.save();
-  }
-  // tslint:disable-next-line:typedef
-  public  addCandidat(){
-    this.villeService.addCandidat();
-  }
-  // tslint:disable-next-line:typedef
-  public  validate() {
-   return  this.villeService.validate();
+  get employe(): Employe {
+    return this.employeService.employe;
   }
   // tslint:disable-next-line:typedef
   showDetailTask() {
     document.getElementById('task-display').style.display = 'block';
   }
-
+  find(employe: Employe){
+    return this.tacheService.findTacheByemploye(employe);
+  }
+  get tacheEmployes(): Array<TacheEmploye> {
+    return this.tacheService.tacheEmployes;
+  }
   // tslint:disable-next-line:typedef
   closeTask() {
     document.getElementById('task-display').style.display = 'none';

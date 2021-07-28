@@ -1,5 +1,5 @@
 import {newArray} from '@angular/compiler/src/util';
-import {Candidat} from './candidat.model';
+import {Candidat} from './tacheEmploye.model';
 
 export class Ville {
   public id: number;

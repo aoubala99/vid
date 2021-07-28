@@ -18,6 +18,12 @@ import { ClientCreateComponent } from './view/client-management/client-create/cl
 import { ClientListComponent } from './view/client-management/client-list/client-list.component';
 import { EmployeListComponent } from './view/employe-management/employe-list/employe-list.component';
 import { EmployeCreateComponent } from './view/employe-management/employe-create/employe-create.component';
+import { ProjetComponent } from './view/chef-page/projet/projet.component';
+import { ProjetListComponent } from './view/chef-page/projet/projet-list/projet-list.component';
+import { ProjetCreateComponent } from './view/chef-page/projet/projet-create/projet-create.component';
+import { ProjetStatueComponent } from './view/chef-page/projet/projet-statue/projet-statue.component';
+import { AdminListComponent } from './view/admin-management/admin-list/admin-list.component';
+import { AdminCreateComponent } from './view/admin-management/admin-create/admin-create.component';
 
 
 @NgModule({
@@ -33,7 +39,13 @@ import { EmployeCreateComponent } from './view/employe-management/employe-create
     ClientCreateComponent,
     ClientListComponent,
     EmployeListComponent,
-    EmployeCreateComponent
+    EmployeCreateComponent,
+    ProjetComponent,
+    ProjetListComponent,
+    ProjetCreateComponent,
+    ProjetStatueComponent,
+    AdminListComponent,
+    AdminCreateComponent
   ],
     imports: [
         BrowserModule,

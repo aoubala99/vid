@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Chef} from '../model/chef.model';
 import {User} from '../model/user.model';
+import {Responsable} from '../model/responsable.model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class ChefService {
   private _index: number;
 
   get chef(): Chef {
-    if (this._chef==null){
+    if (this._chef == null){
       this._chef = new Chef();
     }
     return this._chef;
@@ -71,6 +72,17 @@ export class ChefService {
         console.log(data);
       }, error => {
         console.log('error');
+      }
+    );
+  }
+  public findChefByUser(ref: string) {
+    // tslint:disable-next-line:max-line-length
+    this.http.get<Chef>('http://localhost:8037/Gestion-TacheProjet/ChefProjet/user/ref/' + ref).subscribe(
+      data => {
+        this.chef = data;
+        console.log(data);
+      }, error => {
+        console.log('erooooooooooooooor');
       }
     );
   }

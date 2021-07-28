@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {EmployeService} from '../../Controller/service/employe.service';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {Employe} from '../../Controller/model/employe.model';
+import {Admin} from '../../Controller/model/admin.model';
+import {AdminService} from '../../Controller/service/admin.service';
 
 @Component({
   selector: 'app-admin-management',
@@ -10,11 +12,21 @@ import {Employe} from '../../Controller/model/employe.model';
 })
 export class AdminManagementComponent implements OnInit {
 
-  constructor( private modalService: NgbModal) { }
+  constructor( private adminService:AdminService) { }
 
   ngOnInit(): void {
-  }
 
+
+  }
+  get admin(): Admin {
+    return this.adminService.admin;
+  }
+  get admins(): Array<Admin> {
+    return this.adminService.admins;
+  }
+  save(){
+    this.adminService.save();
+  }
   // tslint:disable-next-line:typedef
   showCreateEmploye() {
     document.getElementById('create').style.display = 'block';

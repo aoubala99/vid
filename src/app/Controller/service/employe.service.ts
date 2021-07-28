@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Employe} from '../model/employe.model';
 import {Observable} from 'rxjs';
 import {UserService} from './user.service';
+import {Responsable} from '../model/responsable.model';
 
 
 
@@ -91,6 +92,17 @@ export class EmployeService {
         console.log(data);
       }, error => {
         console.log(error);
+      }
+    );
+  }
+  public  findEmpyUser(ref: string) {
+    // tslint:disable-next-line:max-line-length
+    this.http.get<Employe>('http://localhost:8037/Gestion-TacheProjet/employe/user/ref/' + ref).subscribe(
+      data => {
+        this.employe = data;
+        console.log(data);
+      }, error => {
+        console.log('erooooooooooooooor');
       }
     );
   }

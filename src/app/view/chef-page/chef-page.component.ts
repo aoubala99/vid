@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ChefService} from '../../Controller/service/chef.service';
+import {Chef} from '../../Controller/model/chef.model';
 
 @Component({
   selector: 'app-chef-page',
@@ -7,11 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChefPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private chefService: ChefService) { }
 
   ngOnInit(): void {
+    return this.chefService.findChefByUser(this.getInfo());
   }
-
+  getInfo(){
+    return  JSON.parse(localStorage.getItem('reference'));
+  }
+  get chef(): Chef {
+    return this.chefService.chef;
+  }
   showDiv() {
     document.getElementById('projet-display').style.display = 'block';
 
